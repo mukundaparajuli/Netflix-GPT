@@ -25,8 +25,8 @@ const Browse = () => {
   // fetch data from tmdb hook
   useNowPlayingMovies();
   return (
-    <div className="relative">
-      <div className="fixed flex justify-between items-center bg-gradient-to-b from-black z-20 w-screen h-auto  opacity-80">
+    <div className="">
+      <div className="fixed flex justify-between items-center bg-gradient-to-b from-black z-20 w-screen h-auto   opacity-80">
         <Header />
         <div
           className="flex items-center mr-8 cursor-pointer"

@@ -8,9 +8,9 @@ const VideoBackground = ({ id }) => {
   useMovieTrailer({ id });
 
   return (
-    <div className="w-screen absolute">
+    <div className=" absolute">
       <iframe
-        className="w-screen aspect-video bg-gradient-to-tr from-black bg-opacity-90"
+        className="w-screen aspect-video bg-gradient-to-tr from-black bg-opacity- h-full"
   
         src={"https://www.youtube.com/embed/" + trailerId?.key+"?autoplay=1&mute=1&enablejsapi=1&controls=0&picture-in-picture=0&encrypted-media=0"}
         title="FIVE NIGHTS AT FREDDY&#39;S | Final Trailer"

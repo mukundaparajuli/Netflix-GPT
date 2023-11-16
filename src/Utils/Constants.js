@@ -10,3 +10,5 @@ export const API_OPTIONS = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZDFlYzQwM2EwZWUzNTc5NjU0YzhlNjY0MjUxNmVmMSIsInN1YiI6IjY1NTRiYWNlNjdiNjEzNDVjZDM0MzU2YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.P1SCDCpLhRyldPsBw7kPRge7XV3mx4fdtREst2awjCY",
   },
 };
+
+export const MOVIE_IMAGE_CDN = "https://image.tmdb.org/t/p/original";
