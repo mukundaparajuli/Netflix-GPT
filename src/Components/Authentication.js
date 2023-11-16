@@ -10,22 +10,20 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../Utils/Firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Utils/userSlice";
+import { USER_AVATAR } from "../Utils/Constants";
 
 const Authentication = () => {
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
 
-  const navigation = useNavigate();
   const dispatch = useDispatch();
 
   const [errorMessage, setErrorMessage] = useState(null);
   const [isSignedIn, setIsSignedIn] = useState(true);
   const handleSignInSignUp = () => {
-    console.log(email?.current?.value);
     setIsSignedIn(!isSignedIn);
   };
   const handleAuthentication = () => {
@@ -51,8 +49,7 @@ const Authentication = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name?.current?.value,
-            photoURL:
-              "https://scontent.fktm10-1.fna.fbcdn.net/v/t39.30808-6/339248873_176759608566738_5772653231604298843_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=AzaqGadSjQoAX-x04Fd&_nc_ht=scontent.fktm10-1.fna&oh=00_AfAbjLOLO1_C__6HMCpUskJJbHu6pBcN3Ke-tLrZmFx_Xw&oe=655871B6",
+            photoURL: USER_AVATAR,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -64,17 +61,15 @@ const Authentication = () => {
                   photoURL: photoURL,
                 })
               );
-              navigation("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.Message);
             });
-          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log(errorCode + "-" + errorMessage);
+         
           setErrorMessage(errorMessage);
         });
     } else {
@@ -86,13 +81,12 @@ const Authentication = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigation("/browse");
+         
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log(errorCode + "-" + errorMessage);
+          
           setErrorMessage(errorMessage);
         });
     }
