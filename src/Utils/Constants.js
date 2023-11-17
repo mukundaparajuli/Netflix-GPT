@@ -11,4 +11,4 @@ export const API_OPTIONS = {
   },
 };
 
-export const MOVIE_IMAGE_CDN = "https://image.tmdb.org/t/p/original";
+export const MOVIE_IMAGE_CDN = "https://image.tmdb.org/t/p/w500";

@@ -7,8 +7,11 @@ import { useDispatch } from "react-redux";
 import { removeUser } from "../Utils/userSlice";
 import { useSelector } from "react-redux";
 import useNowPlayingMovies from "../Hooks/useNowPlayingMovies";
+import usePopularMovies from "../Hooks/usePopularMovies";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
+import useTopRatedMovies from "../Hooks/useTopRatedMovies";
+import useUpComingMovies from "../Hooks/useUpComingMovies";
 
 const Browse = () => {
   const user = useSelector((state) => state.user);
@@ -24,6 +27,10 @@ const Browse = () => {
   };
   // fetch data from tmdb hook
   useNowPlayingMovies();
+  usePopularMovies();
+  useTopRatedMovies();
+  useUpComingMovies();
+
   return (
     <div className="">
       <div className="fixed flex justify-between items-center bg-gradient-to-b from-black z-20 w-screen h-auto   opacity-80">
