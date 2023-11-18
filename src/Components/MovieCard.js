@@ -1,12 +1,18 @@
 import React from "react";
 import { MOVIE_IMAGE_CDN } from "../Utils/Constants";
 
-const MovieCard = ({ posterPath }) => {
+const MovieCard = ({ backdrop_path, title }) => {
   return (
-    <div className="">
-      <div className="pr-4 w-52">
-        <img className="h-56 w-52" src={MOVIE_IMAGE_CDN + posterPath} alt="" />
+    <div>
+      <div className="pr-4 w-72">
+        <img
+          className="h-36 w-auto rounded-lg"
+          src={MOVIE_IMAGE_CDN + backdrop_path}
+          alt=""
+        />
+        <h1 className="text-white text-lg font-bold">{title}</h1>
       </div>
+      
     </div>
   );
 };

@@ -18,9 +18,8 @@ const MainContainer = () => {
   return (
     <div className="h-full">
       <VideoBackground id={id} />
-      <div>
-        <VideoTitle title={original_title} overview={overview} />
-      </div>
+
+      <VideoTitle title={original_title} overview={overview} />
     </div>
   );
 };

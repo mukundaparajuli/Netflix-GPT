@@ -6,7 +6,7 @@ const SecondaryContainer = () => {
   const movies = useSelector((store) => store.movies);
 
   return (
-    <div className="overflow-auto bg-black bg-opacity-90">
+    <div className="overflow-auto bg-black ">
       {movies ? (
         <div>
           <MovieLists

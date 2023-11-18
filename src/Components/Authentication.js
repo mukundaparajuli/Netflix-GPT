@@ -12,7 +12,7 @@ import {
 import { auth } from "../Utils/Firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Utils/userSlice";
-import { USER_AVATAR } from "../Utils/Constants";
+import { BG_IMAGE, USER_AVATAR } from "../Utils/Constants";
 
 const Authentication = () => {
   const email = useRef(null);
@@ -69,7 +69,7 @@ const Authentication = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-         
+
           setErrorMessage(errorMessage);
         });
     } else {
@@ -81,12 +81,11 @@ const Authentication = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-         
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          
+
           setErrorMessage(errorMessage);
         });
     }
@@ -95,7 +94,7 @@ const Authentication = () => {
     <div>
       <img
         className="bg-cover w-[100%] h-[100%] absolute"
-        src="https://assets.nflxext.com/ffe/siteui/vlv3/77d35039-751f-4c3e-9c8d-1240c1ca6188/9e7e0ebe-cd77-49ac-8bf3-d1fb691d0ece/NP-en-20231106-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+        src={BG_IMAGE}
         alt="BackgroundImage"
       />
       <div className="absolute inset-0 bg-black opacity-50"></div>

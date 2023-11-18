@@ -12,7 +12,7 @@ const VideoBackground = ({ id }) => {
       <iframe
         className="w-screen aspect-video bg-gradient-to-tr from-black bg-opacity- h-full"
   
-        src={"https://www.youtube.com/embed/" + trailerId?.key+"?autoplay=1&mute=1&enablejsapi=1&controls=0&picture-in-picture=0&encrypted-media=0"}
+        src={"https://www.youtube.com/embed/" + trailerId?.key+"?autoplay=1&mute=1&enablejsapi=1&controls=0&picture-in-picture=0&encrypted-media=0&rel=0&loop=1"}
         title="FIVE NIGHTS AT FREDDY&#39;S | Final Trailer"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       ></iframe>
