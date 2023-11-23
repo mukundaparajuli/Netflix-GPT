@@ -1,13 +1,13 @@
 import React from "react";
-import MovieLists from "./MovieLists";
+import SearchedMovieList from "./SearchedMovieList";
 import { useSelector } from "react-redux";
 
 const SearchedMovies = ({ title }) => {
   const movie = useSelector((store) => store.gptSearchSlice.movieResults);
   return (
-    <div className="overflow-auto bg-black opacity-100 bottom-1 absolute w-full">
+    <div className="overflow-auto bg-black bg-opacity-70 bottom-0 h-[60%] md:bottom-0 absolute w-full ">
       {console.log(movie)}
-      <MovieLists movieInfo={movie} />
+      <SearchedMovieList movieInfo={movie} />
     </div>
   );
 };

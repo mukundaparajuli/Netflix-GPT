@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { auth } from "../Utils/Firebase";
 import { addUser, removeUser } from "../Utils/userSlice";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LOGO } from "../Utils/Constants";
 
 const Header = () => {
@@ -34,7 +34,9 @@ const Header = () => {
   }, []);
   return (
     <div>
-      <img className="w-48 h-16" src={LOGO} alt="Logo" />
+      <Link to="/browse">
+        <img className="w-48 h-16" src={LOGO} alt="Logo" />
+      </Link>
     </div>
   );
 };

@@ -14,6 +14,7 @@ import useTopRatedMovies from "../Hooks/useTopRatedMovies";
 import useUpComingMovies from "../Hooks/useUpComingMovies";
 import { toggleGptSearch } from "../Utils/gptSearchSlice";
 import GptSearch from "./GptSearch";
+import { USER_AVATAR } from "../Utils/Constants";
 
 const Browse = () => {
   const toggleValue = useSelector(
@@ -47,7 +48,6 @@ const Browse = () => {
         <div className="flex items-center">
           <button
             className="z-index-10 p-2 m-2 h-12  bg-purple-900 border-2 border-black shadow-lg text-white font-semibold rounded-lg"
-
             onClick={toggleGpt}
           >
             {toggleValue ? "Home" : "GPT Search"}
@@ -58,7 +58,7 @@ const Browse = () => {
           >
             <img
               className="h-8 rounded-full border-black border-4"
-              src={user?.photoURL}
+              src={USER_AVATAR}
               alt=""
             />
             <h1 className=" font-semibold text-red-600 text-2xl items-center h-16 my-4 py-4">

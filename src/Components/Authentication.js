@@ -77,23 +77,13 @@ const Authentication = () => {
         auth,
         email?.current?.value,
         password?.current?.value
-      )
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-
-          setErrorMessage(errorMessage);
-        });
+      );
     }
   };
   return (
     <div>
       <img
-        className="bg-cover w-[100%] h-[100%] absolute"
+        className="bg-cover object-cover h-screen md:w-[100%] absolute"
         src={BG_IMAGE}
         alt="BackgroundImage"
       />
@@ -102,7 +92,7 @@ const Authentication = () => {
         <Header />
       </div>
       <div className="absolute w-full h-full flex justify-center items-center">
-        <div className="w-3/12 bg-black h-auto rounded-lg opacity-90">
+        <div className="w-[90%] md:w-3/12 bg-black h-auto rounded-lg opacity-90">
           <h1 className="text-white text-4xl font-semibold p-3 mx-3 my-2">
             {isSignedIn ? "Sign In" : "Sign Up"}
           </h1>

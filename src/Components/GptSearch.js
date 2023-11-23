@@ -44,21 +44,25 @@ const GptSearch = () => {
   return (
     <div>
       <div className="flex justify-center">
-        <div className="z-10 bg-black bg-opacity-40 m-4 p-2 w-1/2 fixed flex justify-center rounded-lg top-36">
+        <div className="w-[90%] z-10 bg-black bg-opacity-40 m-2 md:m-4 p-2 md:w-1/2 fixed flex justify-center rounded-lg top-36">
           <input
             ref={searchText}
-            className="w-4/5 h-12 border-2 border-black rounded-xl p-1 m-2 bg-gray-500 text-white"
+            className="mx-1 w-[75%] md:w-4/5 h-10 md:h-12 border-2 border-black rounded-xl p-1 md:m-2 bg-gray-500 text-white"
             type="text"
             placeholder="What would you like to watch today?"
           />
           <button
-            className="m-2 border-black border-2 h-12 rounded-xl p-1 px-3 bg-blue-800 text-white font-semibold"
+            className="mx-1 md:m-2 border-black border-2 h-10 md:h-12 rounded-xl p-1 md:px-3 bg-blue-800 text-white font-semibold"
             onClick={handleSearch}
           >
             Search
           </button>
         </div>
-        <img className="fixed h-[100vh]" src={BG_IMAGE} alt="" />
+        <img
+          className="fixed object-cover h-screen md:w-full "
+          src={BG_IMAGE}
+          alt=""
+        />
       </div>
       {searchText && <SearchedMovies title={searchText} />}
     </div>
