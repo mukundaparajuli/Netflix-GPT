@@ -2,12 +2,13 @@ import React from "react";
 import Authentication from "./Authentication";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Browse from "./Browse";
+import GptSearch from "./GptSearch";
 
 const Body = () => {
   const appRouter = createBrowserRouter([
     {
       path: "/",
-      element: <Authentication />,
+      element: <GptSearch />,
     },
     {
       path: "/browse",

@@ -23,18 +23,21 @@ const Browse = () => {
   const user = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const handleSignOut = () => {
-    signOut(auth)
-      .then(() => {
-        navigate("/");
-        dispatch(removeUser());
-      })
-      .catch((error) => {});
-  };
+  // const handleSignOut = () => {
+  //   signOut(auth)
+  //     .then(() => {
+  //       navigate("/");
+  //       dispatch(removeUser());
+  //     })
+  //     .catch((error) => {});
+  // };
   console.log(toggleValue);
+
+
   const toggleGpt = () => {
     dispatch(toggleGptSearch());
   };
+
   // fetch data from tmdb hook
   useNowPlayingMovies();
   usePopularMovies();
@@ -52,7 +55,7 @@ const Browse = () => {
           >
             {toggleValue ? "Home" : "GPT Search"}
           </button>
-          <div
+          {/* <div
             className="flex items-center mr-8 cursor-pointer"
             onClick={handleSignOut}
           >
@@ -64,7 +67,7 @@ const Browse = () => {
             <h1 className=" font-semibold text-red-600 text-2xl items-center h-16 my-4 py-4">
               Log Out
             </h1>
-          </div>
+          </div> */}
         </div>
       </div>
       {toggleValue ? (

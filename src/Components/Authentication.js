@@ -29,10 +29,10 @@ const Authentication = () => {
   const handleAuthentication = () => {
     const message = name
       ? checkValiditySignUp(
-          name?.current?.value,
-          email?.current?.value,
-          password?.current?.value
-        )
+        name?.current?.value,
+        email?.current?.value,
+        password?.current?.value
+      )
       : checkValiditySignIn(email?.current?.value, password?.current?.value);
     setErrorMessage(message);
 
